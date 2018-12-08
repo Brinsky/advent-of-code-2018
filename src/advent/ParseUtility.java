@@ -31,4 +31,17 @@ public class ParseUtility {
     m.find();
     return Integer.parseInt(m.group(1));
   }
+
+  /** Returns a list of strings matched by capturing groups (i.e. groups #1 and onward). */
+  public static List<String> getMatchedGroups(String s, Pattern p) {
+    Matcher matcher = p.matcher(s);
+    matcher.find();
+
+    List<String> matchedGroups = new ArrayList<>(matcher.groupCount());
+    for (int i = 1; i <= matcher.groupCount(); i++) {
+      matchedGroups.add(matcher.group(i));
+    }
+
+    return matchedGroups;
+  }
 }
