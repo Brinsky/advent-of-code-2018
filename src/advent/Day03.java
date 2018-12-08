@@ -22,12 +22,12 @@ public class Day03 {
     public final int yEnd;
 
     public Claim(String claim) {
-      int[] args = ParseUtility.extractInts(claim);
-      id = args[0];
-      xStart = args[1];
-      yStart = args[2];
-      xEnd = xStart + args[3];
-      yEnd = yStart + args[4];
+      List<Integer> args = ParseUtility.extractIntegers(claim);
+      id = args.get(0);
+      xStart = args.get(1);
+      yStart = args.get(2);
+      xEnd = xStart + args.get(3);
+      yEnd = yStart + args.get(4);
     }
   }
 

@@ -6,17 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParseUtility {
-  public static int[] extractInts(String s) {
-    String[] valuesText = s.split("\\D+");
-    int[] values = values = new int[valuesText.length - 1];
-
-    for (int i = 0; i < values.length; i++) {
-      values[i] = Integer.parseInt(valuesText[i + 1]);
-    }
-
-    return values;
-  }
-
   private static final Pattern INT_PATTERN = Pattern.compile("\\d+");
 
   public static List<Integer> extractIntegers(String s) {
