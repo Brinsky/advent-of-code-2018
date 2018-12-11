@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParseUtility {
-  private static final Pattern INT_PATTERN = Pattern.compile("\\d+");
+  private static final Pattern INT_PATTERN = Pattern.compile("[+\\-]?\\d+");
 
   public static List<Integer> extractIntegers(String s) {
     List<Integer> integers = new ArrayList<>();
