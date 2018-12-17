@@ -9,9 +9,9 @@ public class Day10 {
 
   private static final int NUM_TRIALS = 15000; // Determined by trial-and-error
 
-  private static class Position {
-    private final int x;
-    private final int y;
+  public static class Position implements Comparable<Position> {
+    public final int x;
+    public final int y;
 
     public Position(int x, int y) {
       this.x = x;
@@ -36,6 +36,10 @@ public class Day10 {
       return new Position(x + deltaX, y + deltaY);
     }
 
+    public Position add(Position other) {
+      return new Position(x + other.x, y + other.y);
+    }
+
     @Override
     public int hashCode() {
       return x * 3 + y * 7;
@@ -44,6 +48,15 @@ public class Day10 {
     @Override
     public String toString() {
       return "(" + x + ", " + y + ")";
+    }
+
+    @Override
+    public int compareTo(Position other) {
+      if (y != other.y) {
+        return Integer.compare(y, other.y);
+      }
+
+      return Integer.compare(x, other.x);
     }
   }
 
