@@ -2,6 +2,7 @@ package advent;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,6 +17,10 @@ public class ParseUtility {
     }
 
     return integers;
+  }
+
+  public static int[] extractInts(String s) {
+    return extractIntegers(s).stream().mapToInt(Integer::intValue).toArray();
   }
 
   /** Returns group #1 from the first match found in the given string */
