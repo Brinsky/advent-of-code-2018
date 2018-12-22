@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Day16 {
 
   @FunctionalInterface
-  private interface OpFunction {
+  public interface OpFunction {
     int perform(int a, int b);
   }
 
@@ -27,12 +27,12 @@ public class Day16 {
     }
   }
 
-  private enum InputType {
+  public enum InputType {
     IMMEDIATE,
     REGISTER
   }
 
-  private enum Op {
+  public enum Op {
     ADDR(BaseOp.ADD, InputType.REGISTER, InputType.REGISTER),
     ADDI(BaseOp.ADD, InputType.REGISTER, InputType.IMMEDIATE),
     MULR(BaseOp.MUL, InputType.REGISTER, InputType.REGISTER),
